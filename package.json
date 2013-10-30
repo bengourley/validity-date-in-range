@@ -1,6 +1,6 @@
 {
   "name": "validity-date-in-range",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Validity style validator to ensure a property is a date within a given range",
   "main": "validator.js",
   "directories": {
