@@ -33,6 +33,9 @@ function createValidator(earliest, latest, options) {
     // date is not a Date
     if (!(date instanceof Date)) return callback(null, keyDisplayName + ' must be a date')
 
+    // 'Invalid Date' is a Date, but not valid
+    if (!moment(date).isValid()) return callback(null, keyDisplayName + ' must be a valid date')
+
     // date precedes `earliest`
     if (earliest && date < getEarliest()) return callback(null, keyDisplayName + ' must be after ' + format(getEarliest()))
 

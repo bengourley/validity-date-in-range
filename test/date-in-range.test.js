@@ -146,4 +146,12 @@ describe('Date in range validator', function () {
 
   })
 
+  it('should error with an invalid date', function (done) {
+    createValidator(new Date(), new Date())('date', 'date', { date: new Date('xyz') }, function (err, message) {
+      assert(!err)
+      assert.equal('date must be a valid date', message)
+      done()
+    })
+  })
+
 })
