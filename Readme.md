@@ -27,10 +27,14 @@ var ninetiesHitsSchema = schemata(
     })
 
 ninetiesHitsSchema.validate({ releaseDate: new Date(1965, 2, 12) }, function (error, errorMessage) {
-  console.log(errorMessage) //-> 'releaseDate must be after '
+  console.log(errorMessage) //-> 'releaseDate must be after 01 Jan 1990'
 })
 
-ninetiesHitsSchema.validate({ releaseDate: 20 }, function (error, errorMessage) {
+ninetiesHitsSchema.validate({ releaseDate: new Date(2005, 3, 20) }, function (error, errorMessage) {
+  console.log(errorMessage) //-> 'releaseDate must be before 31 Dec 1999'
+})
+
+ninetiesHitsSchema.validate({ releaseDate: new Date(1995, 10, 13) }, function (error, errorMessage) {
   console.log(errorMessage) //-> undefined
 })
 ```
@@ -42,9 +46,15 @@ date of birth 25 Jan 1996 cannot legally buy alcohol in the UK at the time of wr
 
 ```
 var schema = schemata(
-    { age:
+    { publishedDate:
       { type: Date
-      , validators: { all: [ createDateValidator(new Date(''), new Date('')) ] }
+      , validators:
+        { all:
+          [ createDateValidator(null, function () {
+              return new Date(/* Get today - 18 years */)
+            })
+          ]
+        }
       }
     })
 ```
