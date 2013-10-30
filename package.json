@@ -1,0 +1,37 @@
+{
+  "name": "validity-date-in-range",
+  "version": "0.0.0",
+  "description": "Validity style validator to ensure a property is a date within a given range",
+  "main": "validator.js",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bengourley/validity-date-in-range"
+  },
+  "keywords": [
+    "validity",
+    "validation",
+    "date",
+    "range"
+  ],
+  "author": "Ben Gourley",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bengourley/validity-date-in-range/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "istanbul": "~0.1.44"
+  },
+  "dependencies": {
+    "moment": "~2.4.0"
+  }
+}
