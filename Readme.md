@@ -1,10 +1,12 @@
 # validity-date-in-range
 
+[![Build Status](https://travis-ci.org/bengourley/validity-date-in-range.png?branch=master)](https://travis-ci.org/bengourley/validity-date-in-range)
+
 Validity style validator to ensure a property is a date within a given range.
 
 ## Installation
 
-      npm install validity-date-in-range
+    npm install validity-date-in-range
 
 ## Usage
 
